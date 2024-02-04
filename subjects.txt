@@ -1,8 +1,8 @@
+All subjects
 Arts
 2-D Art and Design
 3-D Art and Design
 Drawing
-Studio Art: Drawing
 Music Theory
 English Language Arts
 English Lang/Comp
@@ -11,7 +11,8 @@ Foreign Languages
 Chinese Lang
 French Lang
 French Lit
-German Lang Italian Lang
+German Lang 
+Italian Lang
 Japanese Lang
 Latin: Lit
 Latin: Vergil
