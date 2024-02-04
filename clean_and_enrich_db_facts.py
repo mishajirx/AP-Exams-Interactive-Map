@@ -43,6 +43,7 @@ def update_characteristics_based_on_grades(school_code: int, subject_id: int, gr
 cnt = 0
 
 for (school_code,) in q.fetchall():
+    # school_code = 1550505
     print(school_code, cnt)
     cnt += 1
     q.execute(f"SELECT subject_id FROM ap_performance_facts WHERE \"School Code\" = {school_code}")
@@ -94,8 +95,7 @@ for (school_code,) in q.fetchall():
             total_empty_tests += tests_taken_empty_subjects[v]
         total_empty_tests = decimal.Decimal(total_empty_tests)
         # print("empty_subtree", empty_subtree)
-        # print("total", sum(total_gra
-        # des), total_grades)
+        # print("total", sum(total_grades), total_grades)
         # print("known", sum(known_grades), known_grades)
         # print("left", sum(left_grades), left_grades)
 
