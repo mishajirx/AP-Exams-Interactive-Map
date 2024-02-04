@@ -1,15 +1,8 @@
 import psycopg2
 from openpyxl import load_workbook
+from config import ConnectionString
 
-conn = psycopg2.connect("""
-    host=rc1a-sfzt3mb3eikmvb7p.mdb.yandexcloud.net
-    port=6432
-    sslmode=verify-full
-    dbname=AP_Perfomance
-    user=dba
-    password=zrfjvs34!
-    target_session_attrs=read-write
-""")
+conn = psycopg2.connect(ConnectionString)
 
 q = conn.cursor()
 
