@@ -44,7 +44,7 @@ for subject_ind in range(50):
         sheet[f"B{i}"] = subject_ind
         if subject_ind == 0:
             sheet[f"C{i}"] = 0
-        elif subject_ind in [1, 7, 10, 20, 31, 38, 47]:
+        elif subject_ind in [1, 7, 10, 20, 31, 38, 47]  :
             sheet[f"C{i}"] = 1
         else:
             sheet[f"C{i}"] = 2
