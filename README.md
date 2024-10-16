@@ -1,4 +1,4 @@
-# Interactive Map Visualizing MA Public Schools Performance on the AP Exam
+# Interactive Map Visualizing MA Public Schools AP Exam Performance 
 
 ## [LinkedIn Article Link](https://www.linkedin.com/pulse/visualizing-excellence-dynamic-map-ap-exam-schools-zhernevskii-mlwge/) ##
 
