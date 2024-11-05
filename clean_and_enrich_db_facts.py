@@ -43,12 +43,10 @@ def update_characteristics_based_on_grades(school_code: int, subject_id: int, gr
 cnt = 0
 
 for (school_code,) in q.fetchall():
-    # school_code = 1550505
     print(school_code, cnt)
     cnt += 1
     q.execute(f"SELECT subject_id FROM ap_performance_facts WHERE \"School Code\" = {school_code}")
     subjects = set([el[0] for el in q.fetchall()])
-    # print(subjects)
 
     q.execute(f"""
             SELECT subject_id, "Tests Taken" FROM ap_performance_facts WHERE \"School Code\" = {school_code}
@@ -58,8 +56,6 @@ for (school_code,) in q.fetchall():
     tests_taken_empty_subjects = {}
     for el in response:
         tests_taken_empty_subjects[el[0]] = el[1]
-    # print(empty_subjects)
-    # print(tests_taken_empty_subjects)
 
     if 0 in empty_subjects:
         q.execute(f"""
@@ -73,40 +69,42 @@ for (school_code,) in q.fetchall():
 
         if u not in subjects:
             continue
-        # print(u)
 
+        # Retrieve total grades for a specific subject hierarchy node
         total_grades = known_grades_database[u]
+
+        # Initialize list to accumulate grades for known subjects (5 categories of grades)
         known_grades = [0] * 5
 
+        # Calculate grades for known subjects in the current hierarchy node
+        # Filter subjects to only include known ones (exclude empty subjects)
         known_subtree = (SubjectsHierarchy[u] & (subjects - empty_subjects))
-        # print("known_subtree", known_subtree)
         for v in known_subtree:
-            # print(v)
             v_grades = known_grades_database[v]
-            # print(v_grades)
             for ind in range(5):
                 known_grades[ind] += v_grades[ind]
-
         left_grades = [total_grades[ind] - known_grades[ind] for ind in range(5)]
-
         empty_subtree = SubjectsHierarchy[u] & empty_subjects
+        # Calculate the total number of tests taken for all unrepresented subjects
         total_empty_tests = 0
         for v in empty_subtree:
             total_empty_tests += tests_taken_empty_subjects[v]
         total_empty_tests = decimal.Decimal(total_empty_tests)
-        # print("empty_subtree", empty_subtree)
-        # print("total", sum(total_grades), total_grades)
-        # print("known", sum(known_grades), known_grades)
-        # print("left", sum(left_grades), left_grades)
-
+        # Distribute remaining grades proportionally among unrepresented subjects
         for v in empty_subtree:
-            # print((tests_taken_empty_subjects[v], total_empty_tests))
-            v_grades = [left_grades[i] * (tests_taken_empty_subjects[v] / total_empty_tests) for i in range(5)]
-            # print(v_grades)
+            # Calculate grades proportion for each category based on tests taken for each
+            # unrepresented subject
+            v_grades = [left_grades[i] * (tests_taken_empty_subjects[v] / total_empty_tests) for i
+                        in range(5)]
+            # Update known grades database for the unrepresented subject with newly calculated
+            # grades
             known_grades_database[v] = v_grades
+            # Upload grades for the specific school and subject
             upload_grades(school_code, v, v_grades)
+            # Update school characteristics based on the new grades
             update_characteristics_based_on_grades(school_code, v, v_grades)
 
+        # Add all child nodes (represented and unrepresented subjects) to the processing queue
         for v in SubjectsHierarchy[u] & subjects:
             queue.append(v)
 
