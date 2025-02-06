@@ -46,7 +46,7 @@ for row in reader:
             continue
         marked.add(int(org_id))
         print(org_name, org_id)
-        org_name = org_name.replace('\'', '')
+        org_name =  org_name.replace('\'', '')
         d_name = d_name.replace('\'', '')
         row = (org_id, org_name, d_name, 0, 0)
         query = f"INSERT INTO school_dim VALUES {row}"
