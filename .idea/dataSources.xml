@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://rc1a-sfzt3mb3eikmvb7p.mdb.yandexcloud.net:6432/AP_Perfomance</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="postgres@localhost" uuid="d93d19fe-8263-47ad-9455-ee44dedf6762">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

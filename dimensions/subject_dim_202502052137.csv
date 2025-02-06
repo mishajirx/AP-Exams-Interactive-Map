@@ -1,0 +1,53 @@
+"subject_id";"Subject Name";"subject_area";"hierarchy_level"
+30;Psychology;History and Social Science;2
+31;Math and Computer Science;Math and Computer Science;1
+32;Calculus AB;Math and Computer Science;2
+33;Calculus BC;Math and Computer Science;2
+34;Computer Sci A;Math and Computer Science;2
+35;Computer Sci AB;Math and Computer Science;2
+36;Computer Sci Principles;Math and Computer Science;2
+37;Statistics;Math and Computer Science;2
+38;Science and Technology;Science and Technology;1
+39;Biology;Science and Technology;2
+40;Chemistry ;Science and Technology;2
+41;Environmental Sci ;Science and Technology;2
+42;Physics B;Science and Technology;2
+43;Physics C: E;Science and Technology;2
+44;Physics C: Mech;Science and Technology;2
+45;Physics 1;Science and Technology;2
+46;Physics 2;Science and Technology;2
+47;Capstone;Capstone;1
+48;Capstone Seminar ;Capstone;2
+49;Capstone Research;Capstone;2
+0;All Subjects;Everything;0
+1;Arts;Arts;1
+2;"2-D Art and Design";Arts;2
+3;"3-D Art and Design";Arts;2
+4;Drawing;Arts;2
+5;Music Theory;Arts;2
+6;English Language Arts;English Language Arts;1
+7;English Lang/Comp;English Language Arts;2
+8;English Lit/Comp;English Language Arts;2
+9;Foreign Languages;Foreign Languages;1
+10;Chinese Lang;Foreign Languages;2
+11;French Lang;Foreign Languages;2
+12;French Lit;Foreign Languages;2
+13;German Lang ;Foreign Languages;2
+14;Italian Lang;Foreign Languages;2
+15;Japanese Lang;Foreign Languages;2
+16;Latin: Lit;Foreign Languages;2
+17;Latin: Vergil;Foreign Languages;2
+18;Spanish Lang ;Foreign Languages;2
+19;Spanish Lit;Foreign Languages;2
+20;History and Social Science;History and Social Science;1
+21;Art History;History and Social Science;2
+22;Economics: Macro;History and Social Science;2
+23;Economics: Micro;History and Social Science;2
+24;Govt & Pol: Comp;History and Social Science;2
+25;Govt & Pol: U.S.;History and Social Science;2
+26;History: European;History and Social Science;2
+27;History: U.S.;History and Social Science;2
+28;History: World;History and Social Science;2
+29;Human Geography;History and Social Science;2
+51;African American History;History and Social Science;2
+52;Precalculus;Math and Computer Science;2

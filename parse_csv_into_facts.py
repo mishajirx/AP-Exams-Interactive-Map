@@ -377,8 +377,8 @@ for row in reader:
     if org_type != "School":
         continue
     if int(org_id) not in org_id_list:
-        continue
-    if subj == "Precalculus" or subj == "African American History":
+        if year == '2024':
+            print(org_name, org_id)
         continue
 
     # recalculate percentages
@@ -392,7 +392,7 @@ for row in reader:
 
     record = (record_id, subj_id, subj_hierarchy, org_id, *stats, year)
     writer.writerow(record)
-    print(record)
+    # print(record)
     record_id += 1
 
 csv_file.close()
