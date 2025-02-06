@@ -376,10 +376,6 @@ for row in reader:
         continue
     if org_type != "School":
         continue
-    if int(org_id) not in org_id_list:
-        if year == '2024':
-            print(org_name, org_id)
-        continue
 
     # recalculate percentages
     if stats[1]:
